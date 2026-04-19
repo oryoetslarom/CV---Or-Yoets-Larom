@@ -183,38 +183,49 @@ footer {
     }
 
     /* --- תיקון סרגל הניווט העליון --- */
+   /* תפריט ניווט מיושר וממורכז לנייד */
     nav {
-        padding: 10px 10px;
+        padding: 12px 5px;
     }
 
     .nav-container {
         flex-direction: column;
-        gap: 8px;
+        align-items: center;
+        gap: 10px;
     }
 
     .logo {
-        font-size: 18px;
-        margin-bottom: 0;
+        font-size: 17px;
+        letter-spacing: 1px;
     }
 
     nav ul {
         display: flex;
         flex-wrap: wrap; 
         justify-content: center; 
-        gap: 6px 14px; 
+        align-items: center; /* מיישר את כל הפריטים לאותו גובה */
+        gap: 10px 12px;
         padding: 0;
-        width: 100%;
         margin: 0;
+        list-style: none;
+        width: 100%;
     }
 
     nav li {
-        font-size: 15px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
     }
 
+    /* תיקון כפתור הלינקדאין שיהיה ישר עם השאר */
     .linkedin-btn {
-        padding: 4px 12px;
-        font-size: 14px;
-        border-radius: 15px;
+        padding: 3px 10px; /* צמצום הפדינג כדי שלא יהיה גבוה מהשאר */
+        font-size: 13px;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+        line-height: 1; /* מוודא שהטקסט בפנים ממורכז */
     }
 
     /* --- שורת יצירת הקשר --- */
