@@ -157,33 +157,47 @@ footer {
    חלק 3: התאמה למסכים קטנים (רספונסיביות)
    מופעל כאשר רוחב המסך קטן מ-768 פיקסלים
    ========================================= */
+/* =========================================
+   חלק 3: התאמה למסכים קטנים (רספונסיביות)
+   ========================================= */
 
 @media (max-width: 768px) {
 
-    /* --- התאמות כלליות ופונטים --- */
-    body {
-        font-size: 16px; 
+    /* הוספת ריווח שווה מהצדדים לכל האתר */
+    header, main, section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100%;
+        box-sizing: border-box;
     }
 
+    body {
+        font-size: 16px; 
+        overflow-x: hidden; /* מונע גלילה לצדדים */
+    }
+
+    /* --- כותרות וטקסט --- */
     h1 {
         font-size: 48px; 
         line-height: 1.1;
         margin-top: 20px;
+        text-align: center;
     }
 
     .subtitle {
         font-size: 18px;
-        padding: 0 15px; 
+        padding: 0 10px; 
         line-height: 1.6;
+        text-align: center;
     }
 
     .section-title {
         font-size: 28px;
         margin-top: 40px;
+        text-align: center;
     }
 
-    /* --- תיקון סרגל הניווט העליון --- */
-   /* תפריט ניווט מיושר וממורכז לנייד */
+    /* --- סרגל ניווט מיושר וממורכז --- */
     nav {
         padding: 12px 5px;
     }
@@ -203,7 +217,7 @@ footer {
         display: flex;
         flex-wrap: wrap; 
         justify-content: center; 
-        align-items: center; /* מיישר את כל הפריטים לאותו גובה */
+        align-items: center; 
         gap: 10px 12px;
         padding: 0;
         margin: 0;
@@ -217,18 +231,17 @@ footer {
         align-items: center;
     }
 
-    /* תיקון כפתור הלינקדאין שיהיה ישר עם השאר */
     .linkedin-btn {
-        padding: 3px 10px; /* צמצום הפדינג כדי שלא יהיה גבוה מהשאר */
+        padding: 3px 10px;
         font-size: 13px;
         border-radius: 12px;
         display: inline-flex;
         align-items: center;
         margin: 0;
-        line-height: 1; /* מוודא שהטקסט בפנים ממורכז */
+        line-height: 1;
     }
 
-    /* --- שורת יצירת הקשר --- */
+    /* --- שורת יצירת קשר --- */
     .contact-bar {
         display: flex;
         flex-direction: column;
@@ -242,15 +255,29 @@ footer {
         margin: 0;
     }
 
+    /* --- גרפים של כישורים, השכלה ושפות --- */
+    .skills-container {
+        max-width: 100%;
+        margin: 30px auto;
+        padding: 0;
+    }
+
+    .skill-bar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
     /* --- ציר הזמן (Timeline) --- */
     .timeline {
-        margin: 20px 15px 40px 15px;
-        padding-right: 20px;
+        /* מירכוד ציר הזמן עם רווח לקו הימני */
+        margin: 30px 35px 40px 10px; 
+        padding-right: 15px;
         border-right: 3px solid var(--mint);
     }
 
     .timeline-item {
-        margin-bottom: 45px; /* כאן הייתה השגיאה, עכשיו זה תקין */
+        margin-bottom: 45px;
+        text-align: right; /* מוודא שהטקסט מיושר לימין בנייד */
     }
 
     .timeline-item::after {
@@ -260,4 +287,4 @@ footer {
         top: 4px;
     }
 
-} /* סוגר סופי שסוגר את כל ה-media query */
+} /* סוגר סופי בהחלט */
